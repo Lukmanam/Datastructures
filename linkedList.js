@@ -17,12 +17,12 @@ class linkedList {
         if (!this.head) {
             this.head = node
             this.tail = node
-            this.size++;
+            
         }
         else {
             this.tail.next = node
             this.tail = node;
-            this.size++;
+            
         }
 
     }
