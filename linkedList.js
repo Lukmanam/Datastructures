@@ -26,7 +26,7 @@ class linkedList {
         }
 
     }
-    prepend(value)
+    Prepend(value)
     {
         const node=new Node(value)
         if (!this.head) {
@@ -52,5 +52,5 @@ class linkedList {
 const list=new linkedList()
 list.append(100)
 list.append(120)
-list.prepend(400)
+list.Prepend(400)
 list.display()
