@@ -52,4 +52,5 @@ class linkedList {
 const list=new linkedList()
 list.append(100)
 list.append(120)
+list.prepend(400)
 list.display()
