@@ -17,11 +17,13 @@ class linkedList {
         if (!this.head) {
             this.head = node
             this.tail = node
+            this.size++;
             
         }
         else {
             this.tail.next = node
             this.tail = node;
+            this.size++;
             
         }
 
@@ -32,14 +34,42 @@ class linkedList {
         if (!this.head) {
             this.head = node
             this.tail = node
+            this.size++;
             
         }
         else
         {
             node.next=this.head
-            this.head=node
+            this.head=node;
+            this.size++;
         }
     }
+
+    insert(value,index)
+    {
+        if(index<0 || index>this.size)
+        {
+            console.log("error");
+        }
+        const node=new Node(value)
+        let current=this.head
+        if(index===0)
+        {
+            this.Prepend(value)
+        }
+        for (let i=0;i<index-1;i++)
+        {
+            current=current.next
+            
+
+        }
+        node.next=current.next
+        current.next=node
+        this.size++;
+    }
+
+    
+
 
     display() {
         let current = this.head
@@ -50,7 +80,13 @@ class linkedList {
     }
 }
 const list=new linkedList()
-list.append(100)
-list.append(120)
-list.Prepend(400)
+list.append(9)
+list.append(777)
+list.Prepend(8888)
+list.insert(999,2)
+
+list.insert(1020,3)
+list.insert(10044,5)
+
+
 list.display()
