@@ -68,7 +68,35 @@ class linkedList {
         this.size++;
     }
 
-    
+    remove(index)
+    {
+        let removenode;
+        if(index<0 || index>this.size)
+        {
+            console.log("error");
+        }
+        if(index===0)
+        {
+            removenode=this.head;
+            this.head=this.head.next
+            this.size--;
+        }
+        else
+        {
+            
+            let current=this.head;
+            for(let i=0;i<index-1;i++)
+            {
+                current=current.next
+            } 
+            removenode=current.next
+            current.next=removenode.next
+            this.size--;
+
+        }
+
+    }
+
 
 
     display() {
@@ -87,6 +115,6 @@ list.insert(999,2)
 
 list.insert(1020,3)
 list.insert(10044,5)
-
+list.remove(5)
 
 list.display()
