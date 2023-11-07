@@ -18,7 +18,7 @@ let arr=[2,4,1,68,68,35]
 const result=linearSearch(arr,68)
 if(result!=-1)
 {
-    console.log(`found at ${result}`);
+    console.log(`found ${result}`);
 }
 else
 {
