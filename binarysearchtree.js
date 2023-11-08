@@ -65,7 +65,7 @@ class BST{
             this.inorder(root.left);
             console.log(root.value);
             this.inorder(root.right);
-        }
+        }   
     }
 
     preorder(root)
@@ -89,6 +89,25 @@ class BST{
         }
     }
 
+    validation(root)
+    {
+        if(root===null)
+        {
+            return true
+        }
+        if(root.left && root.left.value>root.value)
+        {
+            return false
+        }
+        if(root.right && root.right.value<root.value){
+            return false
+        }
+        else
+        {
+            return this.validation(root.left)&& this.validation(root.right)
+        }
+    }
+
 }
 
 const bstt=new BST();
@@ -99,3 +118,6 @@ bstt.insert(19)
 bstt.insert(12)
 
 bstt.preorder(bstt.root)
+bstt.postorder(bstt.root)
+bstt.inorder(bstt.root)
+console.log(bstt.validation(bstt.root));
