@@ -11,7 +11,7 @@ class BST {
     }
 
     isEmpty() {
-        return this.root = null
+        return this.root === null
     }
 
     // insertion 
@@ -114,7 +114,7 @@ bstt.insert(25)
 bstt.insert(16)
 bstt.insert(19)
 bstt.insert(12)
-
+console.log(bstt.isEmpty());
 bstt.preorder(bstt.root)
 bstt.postorder(bstt.root)
 bstt.inorder(bstt.root)
