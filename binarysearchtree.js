@@ -57,6 +57,45 @@ class BST{
         }
     }
 
+    // Travel bst
+    inorder(root)
+    {
+        if(root)
+        {
+            this.inorder(root.left);
+            console.log(root.value);
+            this.inorder(root.right);
+        }
+    }
 
-    
+    preorder(root)
+    {
+        if(root)
+        {
+            console.log(root.value);
+            this.preorder(root.left);
+            this.preorder(root.right);
+
+        }
+    }
+
+    postorder(root)
+    {
+        if(root)
+        {
+            this.postorder(root.left)
+            this.postorder(root.right)
+            console.log(root.value);
+        }
+    }
+
 }
+
+const bstt=new BST();
+bstt.insert(20)
+bstt.insert(25)
+bstt.insert(16)
+bstt.insert(19)
+bstt.insert(12)
+
+bstt.preorder(bstt.root)
