@@ -28,12 +28,12 @@ class Stack {
   }
   
   // Example usage:
-  const stack = new Stack();
-  stack.push(1);
-  stack.push(2);
-  stack.push(3);
+  const sstack = new Stack();
+  sstack.push(1);
+  sstack.push(2);
+  sstack.push(3);
   
-  console.log(stack.pop()); // Outputs: 3
-  console.log(stack.peek()); // Outputs: 2
-  console.log(stack.size()); // Outputs: 2
+  console.log(sstack.pop()); // Outputs: 3
+  console.log(sstack.peek()); // Outputs: 2
+  console.log(sstack.size()); // Outputs: 2
   
