@@ -72,6 +72,8 @@ class BST {
         }
     }
 
+    
+
 
     // validation
     validation(root) {
@@ -109,11 +111,11 @@ class BST {
 }
 
 const bstt = new BST();
+bstt.insert(10)
 bstt.insert(20)
-bstt.insert(25)
-bstt.insert(16)
-bstt.insert(19)
-bstt.insert(12)
+bstt.insert(30)
+// bstt.insert(19)
+// bstt.insert(12)
 console.log(bstt.isEmpty());
 bstt.preorder(bstt.root)
 bstt.postorder(bstt.root)
