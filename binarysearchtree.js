@@ -77,7 +77,7 @@ class BST {
 
     // validation
     validation(root) {
-        if (root === null) {
+        if (root == null) {
             return true
         }
         if (root.left && root.left.value > root.value) {
