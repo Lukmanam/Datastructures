@@ -38,3 +38,5 @@ queue.enqueue(10);
 queue.enqueue(20);
 queue.enqueue(400)
 console.log(queue.printqueue());
+queue.dequeue();
+console.log(queue.printqueue());
