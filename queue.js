@@ -34,4 +34,6 @@ class Queue{
 
 
 const queue= new Queue();
-queue.enqueue(10)
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(400)
