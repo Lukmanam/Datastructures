@@ -37,3 +37,4 @@ const queue= new Queue();
 queue.enqueue(10);
 queue.enqueue(20);
 queue.enqueue(400)
+console.log(queue.printqueue());
