@@ -26,13 +26,24 @@ class Stack {
       return this.items.length;
     }
   }
-  
-  // Example usage:
+
   const sstack = new Stack();
+  // Example usage:
+  reverseStack(sstack) {
+    const reversedStack = new Stack();
+  
+    while (!sstack.isEmpty()) {
+      const data = sstack.pop();
+      reversedStack.push(data);
+    }
+  
+    return reversedStack;
+  }
   sstack.push(1);
   sstack.push(2);
   sstack.push(3);
-  
+  const reversedStack = reverseStack(originalStack);
+  console.log("Reversed Stack:");
   console.log(sstack.pop()); // Outputs: 3
   console.log(sstack.peek()); // Outputs: 2
   console.log(sstack.size()); // Outputs: 2
