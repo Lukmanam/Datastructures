@@ -1,4 +1,4 @@
-function bubblesort(a) {
+function bubbleSort(a) {
     for (let i = 0; i < a.length; i++) {
         for (j = 0; j < a.length; j++) {
             if (a[j] > a[j + 1]) {
@@ -11,4 +11,4 @@ function bubblesort(a) {
     console.log(a);
 }
 let a = [12, 45, 6, 433, 67]
-bubblesort(a)
+bubbleSort(a)

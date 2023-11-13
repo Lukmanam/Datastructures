@@ -15,5 +15,5 @@ function insertionsort(a)
     console.log(a);
 }
 
-a=[12,1,45,67,35,67,3]
+a=[21,65,78,35,78,35,79,79]
 insertionsort(a)
