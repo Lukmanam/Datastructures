@@ -39,6 +39,7 @@ class Stack {
   
     return reversedStack;
   }
+  
   sstack.push(1);
   sstack.push(2);
   sstack.push(3);

@@ -17,8 +17,6 @@ function binarySearch(a, value) {
     console.log("not found");
 }
 
-
-
 a =[12,34,56,78,89]
 
 binarySearch(a, 34)

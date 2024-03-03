@@ -87,6 +87,7 @@ class linkedList {
     }
 
 
+
     // fetch value from a particular index
     fetch(index) {
         let current = this.head
