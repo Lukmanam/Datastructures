@@ -17,6 +17,7 @@ function mergesort(a) {
             }
         }
         return [...sorteda, ...lefta, ...righta]
+            
     }
 }
 let a = [12, 34, 56, 13, 33, 99, 22]

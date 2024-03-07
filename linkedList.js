@@ -148,7 +148,4 @@ list.insert(10044, 5)
 list.remove(5)
 list.fetch(1)
 list.search(9)
-
-
-
 list.display()
