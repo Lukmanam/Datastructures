@@ -172,7 +172,54 @@ class linkedList{
             this.tail=node;
             this.size ++;
         }
+        else
+        {
+            this.tail.next=node;
+            this.tail=node;
+            this.size++;
+        }
     }
+    prepend(value){
+        const node=new Node(value)
+        if(!this.head)
+        {
+            this.head=node;
+            this.tail=node;
+            this.size++;
+        }
+        else
+        {
+            node.next=this.head;
+            this.head=node;
+            this.size++;
+            
+        }
+    }
+    insert(value,index)
+    {
+        const node = new Node(value)
+        if(index===0)
+        {
+            this.head=node;
+            this.tail=node;
+            this.size++;
+        }
+        else
+        {
+            let current=this.head;
+            for(let i=0;i<index;i++)
+            {
+                current=current.next
+            }
+            node.next=current.next
+            current.next=node;
+            this.size++;
+
+        }
+
+    }
+
+    
 
     display(){
         if(this.head!==null)
@@ -191,4 +238,9 @@ class linkedList{
 const list=new linkedList()
 
 list.append(100);
+list.append(600);
+list.append(10);
+list.append(1560);
+list.prepend(607850);
+list.prepend(189);
 list.display();
