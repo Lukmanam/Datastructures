@@ -50,28 +50,33 @@ class Stack {
             current = current.next;
         }
     }
-    middleelement(){
-        let current=this.top;
-        
-        console.log(current);
-        let middle=Math.floor((this.size)/2)
-        console.log(middle,"juhh");
-        for(let i=0;i<middle;i++)
-        {
-            current=current.next
-        }
-        return current;
-        
+ middleelement(){
+    let slowPointer=this.top;
+    let fastPointer=this.top
+
+    while(fastPointer!==null && fastPointer.next!==null && fastPointer.next.next!==null)
+    {
+        slowPointer=slowPointer.next
+        fastPointer=fastPointer.next.next;
     }
+    if(fastPointer.next===null)
+    {
+        slowPointer=slowPointer
+    }
+    return slowPointer.value
+ }
 }
 
 const stack1=new Stack();
 stack1.push(1000000000);
 stack1.push(50000);
 stack1.push(8888888888888);
-stack1.pop()
+stack1.push(8);
+stack1.push(123);
+// stack1.pop()
 stack1.display()
-console.log("middle",stack1.middleelement());
+console.log("middle elementis    :",stack1.middleelement());
+
 
 
 
