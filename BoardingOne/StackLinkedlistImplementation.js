@@ -65,6 +65,32 @@ class Stack {
     }
     return slowPointer.value
  }
+//  reverse(){
+//     let prev=null;
+//     current=this.top;
+//     next=current.next
+
+//     while(current!==null)
+//     {
+//         next=current.next;
+//         current.next=prev;
+//         prev=current;
+//         current=prev
+//     }
+//     this.top=prev
+// }
+reverse() {
+    let prev = null;
+    let current = this.top;
+    let next = null;
+    while (current !== null) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    this.top = prev;
+  }
 }
 
 const stack1=new Stack();
@@ -76,6 +102,11 @@ stack1.push(123);
 // stack1.pop()
 stack1.display()
 console.log("middle elementis    :",stack1.middleelement());
+stack1.reverse();
+console.log(
+    "after reverse"
+);
+    stack1.display()
 
 
 
