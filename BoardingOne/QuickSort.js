@@ -22,5 +22,5 @@ function quicksort(a){
 
 }
 
-let a=[34,2,67,3,5,12]
+let a=[12,34,6,2,67,3,5,12]
 console.log(quicksort(a));
