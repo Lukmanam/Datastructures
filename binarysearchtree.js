@@ -42,7 +42,7 @@ class BST {
             }
             else {
                 this.insertnode(root.right, newnode)
-            }
+            }``
         }
     }
 
