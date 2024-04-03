@@ -86,48 +86,88 @@
 // }
 // }
 // datafetch()
+
+
+// class Graph{
+//     constructor(){
+//         this.list={}
+//     }
+//     addVertex(vertex){
+//         if(!this.list[vertex]){
+//             this.list[vertex]=new Set() 
+//         }
+//     }
+    
+//     addEdge(vertex1,vertex2){
+//         if(!this.list[vertex1]){
+//             // this.list[vertex1]=new Set()
+//             this.addVertex(vertex1)
+//         }
+//         if(!this.list[vertex2]){
+//             // this.list[vertex2]=new Set()
+//             this.addVertex(vertex2)
+//         }
+
+//         this.list[vertex1].add(vertex2);
+//         this.list[vertex2].add(vertex1);
+
+
+
+//     }
+//     display(){
+//         for(let vertex in this.list)
+//         {
+//             console.log(vertex + "=>" +[...this.list[vertex]]);
+//         }
+//     }
+    
+// }
+
+// const graph1=new Graph();
+// graph1.addVertex(10);
+// graph1.addVertex(90);
+// graph1.addVertex(50);
+// graph1.addVertex(20);
+// graph1.addEdge(10,90)
+// graph1.addEdge(50,20)
+// graph1.addEdge(10,50)
+// graph1.addEdge(10,100)
+// graph1.display()
+// console.log(graph1);
+
+
 class Graph{
     constructor(){
         this.list={}
     }
-    addVertex(vertex){
+    addvertex(vertex){
         if(!this.list[vertex]){
-            this.list[vertex]=new Set() 
+        this.list[vertex]=new Set()
         }
     }
     addEdge(vertex1,vertex2){
         if(!this.list[vertex1]){
-            // this.list[vertex1]=new Set()
-            this.addVertex(vertex1)
+            this.addvertex(vertex1)
         }
-        if(!this.list[vertex2]){
-            // this.list[vertex2]=new Set()
-            this.addVertex(vertex2)
+        if(!this.list[vertex2])
+        {
+            this.addvertex(vertex2)
         }
-
         this.list[vertex1].add(vertex2);
         this.list[vertex2].add(vertex1);
 
-
-
     }
+
     display(){
         for(let vertex in this.list)
         {
-            console.log(vertex + "=>" +[...this.list[vertex]]);
+            console.log(vertex + "===>" + [...this.list[vertex]])
         }
     }
-    
 }
 
-const graph1=new Graph();
-graph1.addVertex(10);
-graph1.addVertex(90);
-graph1.addVertex(50);
-graph1.addVertex(20);
-graph1.addEdge(10,90)
-graph1.addEdge(50,20)
-graph1.addEdge(10,50)
-graph1.addEdge(10,100)
-graph1.display()
-// console.log(graph1);
+const Graph1=new Graph()
+Graph1.addvertex(100);
+Graph1.addvertex(110)
+Graph1.addEdge(110,100)
+Graph1.display()
