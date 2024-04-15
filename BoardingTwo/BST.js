@@ -2,10 +2,10 @@ class Node {
     constructor(value) {
         this.value = value;
         this.left = null;
-        this.right = null;
+        this.right = null
     }
-
 }
+
 class BST {
     constructor() {
         this.root = null
@@ -16,65 +16,73 @@ class BST {
     }
 
     insert(value) {
-        const newnode = new Node(value)
-        if (this.isEmpty) {
-            this.root = newnode
+        const node = new Node(value)
+        if (this.isEmpty()) {
+            this.root = node
         }
-        else {
-            this.insertnode(this.root, newnode)
+        else{
+            this.insertnewNode(this.root,node)
         }
     }
-    insertnode(root, newnode) {
-        if (newnode.value < root.value) {
-            if (root.left === null) {
-                root.left = newnode
-            }
-            else {
-                this.insertnode(root.left, newnode)
-            }
-        }
-        else {
 
-            if (root.right === null) {
-                root.right = newnode
+    insertnewNode(root, node) {
+        if (node.value < root.value) {
+            if (root.left === null) {
+                root.left = node
             }
             else {
-                this.insertnode(root.right, newnode)
+                this.insertnewNode(root.left, node)
             }
         }
+        else {
+            if (root.right === null){
+
+                root.right = node
+            }
+            else {
+                this.insertnewNode(root.right,node)
+                
+            }
+        }
+
     }
-    
-    // TRAVERSAL
-    // INOIRDER TRAVERSAL
+
 
     inorder(root){
-        this.inorder(root.left)
-        console.log(root.value);
-        this.inorder(root.right)
-
-    }
-    preorder(root)
-    {
-        console.log(root.value);
-        this.preorder(root.left);
-        this.preorder(root.right)
-    }
-    postorder(root)
-    {
-        this.postorder(root.left)
-        this.postorder(root.right);
-        console.log(root.value);
+        if(root){
+            this.inorder(root.left);
+            console.log(root.value);
+            this.inorder(root.right)
+        }
     }
 
+    preOrder(root){
+        if(root){
+            console.log(root.value);
+            this.preOrder(root.left);
+            this.preOrder(root.right)
+        }
+    }
+    postOrder(root){
+        if(root){
+            this.postOrder(root.left);
+            this.postOrder(root.right);
+            console.log(root.value);
+        }
+    }
 
-  
+    search(value){
+        
     }
 
 
 
+}
 
-const bst1 = new BST();
+const bst =new BST()
+bst.insert(100);
+bst.insert(200);
+bst.insert(300);
+bst.postOrder(bst.root)
 
-console.log(bst1.isEmpty());
-bst1.insert(100);
-bst1.display()
+

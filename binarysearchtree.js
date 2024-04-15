@@ -59,7 +59,7 @@ class BST {
         if (root) {
             console.log(root.value);
             this.preorder(root.left);
-            this.preorder(root.right);
+            this.preorder(root.right)
 
         }
     }
@@ -114,11 +114,13 @@ const bstt = new BST();
 bstt.insert(10)
 bstt.insert(20)
 bstt.insert(30)
-// bstt.insert(19)
-// bstt.insert(12)
+bstt.insert(19)
+bstt.insert(12)
+console.log(
+bstt.validation(bstt.root));
 console.log(bstt.isEmpty());
 bstt.preorder(bstt.root)
-bstt.postorder(bstt.root)
-bstt.inorder(bstt.root)
-console.log(bstt.search(bstt.root, 2))
-console.log(bstt.validation(bstt.root));
+// bstt.postorder(bstt.root)
+// bstt.inorder(bstt.root)
+// console.log(bstt.search(bstt.root, 2))
+// console.log(bstt.validation(bstt.root));
