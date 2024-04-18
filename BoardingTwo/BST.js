@@ -20,8 +20,8 @@ class BST {
         if (this.isEmpty()) {
             this.root = node
         }
-        else{
-            this.insertnewNode(this.root,node)
+        else {
+            this.insertnewNode(this.root, node)
         }
     }
 
@@ -35,54 +35,126 @@ class BST {
             }
         }
         else {
-            if (root.right === null){
+            if (root.right === null) {
 
                 root.right = node
             }
             else {
-                this.insertnewNode(root.right,node)
-                
+                this.insertnewNode(root.right, node)
+
             }
         }
 
     }
 
 
-    inorder(root){
-        if(root){
+    inorder(root) {
+        if (root) {
             this.inorder(root.left);
             console.log(root.value);
             this.inorder(root.right)
         }
     }
 
-    preOrder(root){
-        if(root){
+    preOrder(root) {
+        if (root) {
             console.log(root.value);
             this.preOrder(root.left);
             this.preOrder(root.right)
         }
     }
-    postOrder(root){
-        if(root){
+    postOrder(root) {
+        if (root) {
             this.postOrder(root.left);
             this.postOrder(root.right);
             console.log(root.value);
         }
     }
 
-    search(value){
-        
+    search(root, value) {
+        if (root === null) {
+            return false;
+        }
+        console.log(root, "root");
+        if (root.value === value) {
+            return true
+        }
+        if (value < root.value) {
+            return this.search(root.left, value)
+        }
+        else {
+            return this.search(root.right, value)
+        }
+
+
+
+    }
+
+    validation(root) {
+        if (root === null) {
+            return true
+        }
+        if (root.left && root.left.value > root.value) {
+            return false
+        }
+        if (root.right && root.right.value < root.value) {
+            return false
+        }
+        else
+        {
+            return this.validation(root.left)&& this.validation(root.right)
+        }
+
+    }
+
+    minValueNode(root){
+        let current=root;
+        while(current.left!==null){
+            current=current.left;
+            return current
+        }
+    }
+
+    deleteNode(root,value){
+        console.log("trying to delete Node",root);
+        if(root===null){
+            return root
+        }
+        if(value<root.value){
+            this.deleteNode(root.left,value)
+        }
+        else if(value>root.value){
+            this.deleteNode(root.right,value)
+        }
+        else{
+            if(root.left===null){
+                let temp=root.right;
+                root=null;
+                return temp
+            }
+            else if(root.right===null){
+                let temp=root.left;
+                root=null;
+                return temp
+            }
+
+            let temp=this.minValueNode(root.right);
+            root.value=temp.value;
+            root.right=this.deleteNode(root.right,temp.value)
+        }
+        return root
     }
 
 
 
 }
 
-const bst =new BST()
+const bst = new BST()
 bst.insert(100);
 bst.insert(200);
 bst.insert(300);
-bst.postOrder(bst.root)
-
+// console.log(bst.search(bst.root, 300));
+console.log("result of validation is",bst.validation(bst.root));
+bst.deleteNode(bst.root,100)
+bst.postOrder(bst.root);
 
