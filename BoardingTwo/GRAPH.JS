@@ -58,7 +58,27 @@ class Graph {
         }
     
     
-    
+        BFS(start){
+            let visited=new Set();
+             let q=[start];
+             let result = []
+             visited.add(start)
+             while(q.length){
+                 let current = q.shift();
+                 result.push(current)
+                 for(let neighbour of this.list[current])
+                 {
+                     if(!visited.has(neighbour))
+                     {
+                         q.push(neighbour);
+                         visited.add(neighbour)
+                     }
+                     
+                 }
+             }
+             return result;
+     
+         }
 }
 
 
