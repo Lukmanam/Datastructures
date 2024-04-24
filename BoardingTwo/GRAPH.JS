@@ -79,6 +79,25 @@ class Graph {
              return result;
      
          }
+
+        // BFS(start){
+        //     let result=[];
+        //     let visited=new Set();
+        //     let queue=[start]
+        //     visited.add(start)
+        //     while(queue.length){
+        //         let current=queue.shift()
+        //         result.push(current);
+        //         for(let neighbour of this.list[current])
+        //         {
+        //             if(!visited.has(neighbour)){
+        //                 queue.push(neighbour)
+        //                 visited.add(neighbour)
+        //             }
+        //         }
+        //     }
+        //     return result
+        // }
 }
 
 
@@ -90,5 +109,4 @@ graph.addEdge(12432, 68534);
 graph.addEdge(674, 856)
 graph.deleteVertex(123);
 graph.deleteVertex(100);
-graph.
-    graph.display()
+graph.BFS()
