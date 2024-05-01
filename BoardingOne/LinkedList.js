@@ -244,34 +244,97 @@
 // list.prepend(607850);
 // list.prepend(189);
 // list.display();
-class node{
-    constructor(value)
-    {
+
+
+class Node{
+    constructor(value){
         this.value=value;
         this.next=null
     }
-    
 }
-
-class linkedList{
-    constructor()
-    {
+class LinkedList{
+    constructor(){
         this.head=null;
-        this.size=0
+        this.tail=null;
+        this.size=0;
     }
 
-}
+    Append(value){
+        const node=new Node(value)
+        if(!this.head){
+            this.head=node;
+            this.tail=node;
+            this.size++;
+        }
+        else
+        {
+            this.tail.next=node;
+            this.tail=node;
+            this.size++
+        }
 
-Append(value)
-{
-    const node=new Node(value);
-    if(this.head===null)
-    {
-      node.next=this.head;
-      this.head=node  
+    }
+    print(){
+        let current=this.head;
+        while(current){
+            console.log(current);
+            current=current.next
+        }
+    }
+    prepend(value){
+        const node=new Node(value);
+        if(!this.head){
+            this.head=node;
+            this.tail=node;
+        }
+        else{
+            node.next=this.head;
+            this.head=node;
+            this.size++;
+        }
+    }
+
+    insertinposition(value,target){
+        const node=new Node(value)
+        if(target===0){
+            this.head=node;
+            this.tail=node;
+            this.size++;
+        }
+        if(target>this.size){
+            console.log("index is not possible");
+        }
+        let current=this.head;
+        for(let i=0;i<target;i++)
+        {
+            current=current.next;
+            console.log(current);
+        }
+        node.next=current.next;
+        current.next=node;
+        this.size++;
+    }
+    search(target){
+        if(this.head===target){
+            return true
+        }
+        else
+        {
+            let current=this.head;
+            for(let i=0;i<this.size;i++){
+                current=current.next;
+                if(current.value===target){
+                    return i
+                }
+            }
+        }
     }
 }
-display()
-{
 
-}
+const linked=new LinkedList()
+linked.Append(100);
+linked.Append(200);
+linked.prepend(900);
+linked.insertinposition(100,3)
+linked.print()
+

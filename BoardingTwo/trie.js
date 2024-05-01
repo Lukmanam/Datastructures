@@ -24,9 +24,10 @@ class Trie{
 }
 
 
-const trie=new Trie();
-trie.insert("L");
-trie.insert('u');
-trie.insert('k');
+// const trie=new Trie();
+// trie.insert("L");
+// trie.insert('u');
+// trie.insert('k');
 
-console.log(trie);
+// console.log(trie);
+

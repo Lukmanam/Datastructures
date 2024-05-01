@@ -59,6 +59,27 @@ class Graph{
         return result
     }
 
+    BFS(start){
+        let queue=[start];
+        let visited=new Set();
+        let result=[];
+        visited.add(start)
+
+        while(queue.length)
+        {
+            let current=queue.shift();
+            result.push(current);
+            for(let neighbour of this.list[current])
+            {
+                if(!visited.has(neighbour)){
+                    queue.push(neighbour);
+                    visited.add(neighbour)
+                }
+            }
+        }
+        return result;
+    }
+
 
     display(){
         for(let vertex in this.list){

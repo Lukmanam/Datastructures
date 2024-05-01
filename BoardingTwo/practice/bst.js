@@ -22,26 +22,26 @@
 
 //         }
 //     }
-    insertnewNode(root, node) {
-        if (node.value < root.value) {
-            if (root.left === null) {
-                root.left = node
-            }
-            else {
-                return this.insertnewNode(root.left, node)
-            }
-        }
-        else {
-            if (node.value > root.value) {
-                if (root.right === null) {
-                    root.right = node
-                }
-                else {
-                    return this.insertnewNode(root.right, node)
-                }
-            }
-        }
-    }
+    // insertnewNode(root, node) {
+    //     if (node.value < root.value) {
+    //         if (root.left === null) {
+    //             root.left = node
+    //         }
+    //         else {
+    //             return this.insertnewNode(root.left, node)
+    //         }
+    //     }
+    //     else {
+    //         if (node.value > root.value) {
+    //             if (root.right === null) {
+    //                 root.right = node
+    //             }
+    //             else {
+    //                 return this.insertnewNode(root.right, node)
+    //             }
+    //         }
+    //     }
+    // }
 
 //     inOrder(root) {
 //         if (root) {
