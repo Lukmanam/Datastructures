@@ -4,14 +4,15 @@ function linearSearch(a,target){
             return i
         }
     }
-    return -1
-}
 
-let a=[12,34,6,12,57,21,32]
-const result=linearSearch(a,3);
-if(result!=-1){
-    console.log('found at',result);
+    return -1;
+
+}
+let a=[1,2,3,4,5,6,7,8]
+const result=linearSearch(a,8);
+if(result===-1){
+    console.log("Not Found");
 }
 else{
-    console.log("Not found");
+    console.log(result);
 }

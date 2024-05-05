@@ -1,13 +1,16 @@
-function insertionsort(a){
+function insertionSort(a){
     for(let i=0;i<a.length;i++){
+        let j=i-1;
         let temp=a[i];
-        j=i-1;
-        while(j>=0 && a[j]>temp){
+        while(j>=0 &&a[j]>temp){
             a[j+1]=a[j];
             j--;
         }
-        a[j+1]=temp
+        a[j+1]=temp;
     }
     return a
 }
-console.log(insertionsort([12,34,6,23,67,3,75,123]));
+console.log(
+
+    insertionSort([88,66,999,454,785,21,6764,34])
+);

@@ -1,25 +1,22 @@
-function binarySearch(a,value){
-    let left=0;
-    let right=a.length
-    while(left < right){
-        let middle=Math.floor((left+right)/2);
-        if(a[middle]===value){
+function binarySearch(a,target){
+     let left=0;
+     let right=a.length-1;
+     while(left<right){
+         console.log(left,right);
+         let middle=Math.floor((left+right)/2)
+        if(a[middle]===target){
             return middle
         }
-        if(value<a[middle])
-        {
+        else if(target<a[middle]){
             right=middle-1
         }
-        else if(value>a[middle]){
-            left=middle+1;
+        else{
+            left=middle+1
         }
-    }
-    return "not found"
-    
-}
+     }   
 
-let a=[1,2,3,4,5,6,7,8,9];
+}
 console.log(
 
-    binarySearch(a,9)
+    binarySearch([1,2,3,4,5,6,7,8,9,10],9)
 );
